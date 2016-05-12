@@ -31,8 +31,12 @@ Digital 10  Backlit Control
 */
 
 boolean changed            = false;
+uint8_t btnPressed         = btnNONE;
+int currentMenuItem        = 0;
+String menu[NUMBEROPTIONS] = { "Option 1", "Option 2", "Option 3", "Toggle Display"};
+int btnRange[]             = { 60,200,400,600,800 };
 //triangle
-byte customChar[8] = {
+byte customChar[8]         = {
     0b01000,
     0b01100,
     0b01110,
@@ -42,10 +46,7 @@ byte customChar[8] = {
     0b01000,
     0b00000
 };
-uint8_t btnPressed          = btnNONE;
-int currentMenuItem  = 0;
-String menu[NUMBEROPTIONS] = { "Option 1", "Option 2", "Option 3", "Toggle Display"};
-int btnRange[]           = { 60,200,400,600,800 };
+
 LiquidCrystal lcd(RS, ENABLE, DB4, DB5, DB6, DB7);
 boolean displayon;
 uint8_t readLCDBtn()
