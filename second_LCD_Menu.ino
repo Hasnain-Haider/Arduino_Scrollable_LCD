@@ -1,4 +1,4 @@
-#include <LiquidCrystal\src\LiquidCrystal.h>
+#include <LiquidCrystal.h>
 #define DEBUGMODE true
 #define btnRIGHT  0 
 #define btnUP     1 
@@ -119,5 +119,6 @@ void processChoice(uint8_t selection)
         return;
         break;
     }
+    Serial.print(btnPressed);
     btnPressed = btnNONE;
 }
